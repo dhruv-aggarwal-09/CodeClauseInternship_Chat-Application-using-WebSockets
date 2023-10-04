@@ -27,3 +27,8 @@ button{
     border: none;
     cursor: pointer;
 } 
+button:hover{
+    background-color: lightgreen;
+    color: black;
+    transition: 0.2s all ease-in-out;
+}
