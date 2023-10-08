@@ -1,5 +1,6 @@
 body{
     font-family: Arial, sans-serif;
+    background:aliceblue;
 }
 .chat-container{
     max-width: 400px;
