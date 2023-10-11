@@ -5,7 +5,6 @@ const server = new WebSocket.Server({ port: 3000 }); // Replace with your desire
 const clients = new Set();
 
 server.on('connection', (client) => {
-    // console.log("New client connected")
     clients.add(client);
 
     client.on('message', (message) => {
