@@ -1,9 +1,11 @@
 const WebSocket = require('ws');
+
 const server = new WebSocket.Server({ port: 3000 }); // Replace with your desired port number
 
 const clients = new Set();
 
 server.on('connection', (client) => {
+    // console.log("New client connected")
     clients.add(client);
 
     client.on('message', (message) => {
