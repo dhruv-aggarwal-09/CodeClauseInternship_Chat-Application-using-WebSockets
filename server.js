@@ -5,6 +5,7 @@ const server = new WebSocket.Server({ port: 3000 }); // Replace with your desire
 const clients = new Set();
 
 server.on('connection', (client) => {
+    console.log("Client Added")
     clients.add(client);
 
     client.on('message', (message) => {
@@ -21,4 +22,4 @@ server.on('connection', (client) => {
     });
 });
 
-console.log('WebSocket server is running on port 5500'); // Replace with your desired port number
+console.log('WebSocket server is running on port 3000'); // Replace with your desired port number

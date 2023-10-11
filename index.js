@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const sendButton = document.getElementById("send");
 
     // Create a WebSocket connection to the server
-    const socket = new WebSocket("ws://127.0.0.1:5500/index.html"); // Replace with your server's address
+    const socket = new WebSocket("ws://0.0.0.0:3000/"); // Replace with your server's address
 
     // Handle incoming messages from the server
     socket.addEventListener("message", (event) => {
