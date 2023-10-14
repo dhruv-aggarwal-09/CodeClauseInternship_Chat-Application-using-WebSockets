@@ -1,6 +1,8 @@
 const WebSocket = require('ws');
 
-const server = new WebSocket.Server({ port: 3000 }); // Replace with your desired port number
+const PORT = 3000
+
+const server = new WebSocket.Server({ port: PORT }); // Replace with your desired port number
 
 const clients = new Set();
 
@@ -9,11 +11,12 @@ server.on('connection', (client) => {
     clients.add(client);
 
     client.on('message', (message) => {
+        console.log(message.toString())
         // Broadcast the received message to all connected clients
         clients.forEach((c) => {
-            if (c !== client && c.readyState === WebSocket.OPEN) {
-                c.send(message);
-            }
+            c.send(message);
+            // if (c !== client && c.readyState === Websocket.OPEN){
+            //  }
         });
     });
 
@@ -22,4 +25,4 @@ server.on('connection', (client) => {
     });
 });
 
-console.log('WebSocket server is running on port 3000'); // Replace with your desired port number
+console.log(`WebSocket server is running on port ${PORT}`); // Replace with your desired port number
